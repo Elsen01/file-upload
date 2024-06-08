@@ -1,6 +1,7 @@
 import {Column, Entity, OneToMany, PrimaryGeneratedColumn, Unique} from "typeorm";
 import {FileEntity} from "./file.entity";
 import {IsEmail} from "class-validator";
+import {UserGender} from "../users/enums/user-enum";
 
 @Entity('users')
 export class UserEntity  {
@@ -23,8 +24,8 @@ export class UserEntity  {
     @Column({type: 'varchar'})
     password: string;
 
-    @Column({type: 'enum', enum: ['m', 'f', 'u']})
-    gender: string;
+    @Column({type: 'enum', enum: ['m', 'w']})
+    gender: UserGender;
     
     @OneToMany(()=> FileEntity,(file)=>file.user)
     files: FileEntity[]

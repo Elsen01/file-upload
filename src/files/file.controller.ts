@@ -20,7 +20,7 @@ export class FileController {
     
     @Get()
     getAll() {
-        return this.fileService.findAll()
+        return this.fileService.findAllPhoto()
     }
     @Post('upload')
     @UseInterceptors(

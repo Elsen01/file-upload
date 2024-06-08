@@ -10,7 +10,7 @@ export class FileService {
         private fileRepository: Repository<FileEntity>
     ) {
     }
-   findAll() {
+   findAllPhoto() {
         return this.fileRepository.find()
    }
 }
